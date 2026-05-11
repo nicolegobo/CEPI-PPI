@@ -1,0 +1,10 @@
+{
+  "output": "/nfs/ml_lab/projects/ml_lab/cmann/test/",
+  "query_file": "/nfs/ml_lab/projects/ml_lab/cmann/jupyter/test_seq_n1.fasta",
+  "target_file": "/nfs/ml_lab/projects/ml_lab/cmann/jupyter/test_seq_n100.fasta",
+  "seq_type": "2",
+  "model_path": "/nfs/ml_lab/projects/ml_lab/cmann/ppi_experiments/2024-12-02_t7_c50_noi_rcompletely_epos_only/checkpoint-3111/",
+  "t_seed": 212121,
+  "pt_model": "facebook/esm2_t6_8M_UR50D",
+  "threshold": 0.3
+}

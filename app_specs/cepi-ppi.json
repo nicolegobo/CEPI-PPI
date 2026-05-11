@@ -1,0 +1,143 @@
+{
+    "id": "ppi",
+    "script": "App-ppi",
+    "label": "Protein Protein Interface",
+    "description": "The Mann, the myth, the legend, Carla",
+  "default_memory": "100G",
+    "parameters": [
+            {
+                "id": "gpu_flag",
+                "allow_multiple": false,
+                "required": true,
+                "default": false,
+                "label": "Parameter from the pre-flight checks as to whether this runs on the GPU or CPU",
+                "desc": "GPU or CPU",
+                "type": "bool",
+            },
+            {
+                "id": "query_feature_group",
+                "allow_multiple": true,
+                "required": 0,
+                "default": null,
+                "label": "Input sequences selected from BV-BRC inputs",
+                "desc": "Protein sequence(s) selected from BV-BRC for input to the protein-protein interaction predictor",
+                "wstype": "feature_group",
+                "type": "wstype"
+            },
+            {
+                "id": "query_fasta_file",
+                "required": 0,
+                "label": "A fasta file of protein sequences the user can upload from their computer for prediction",
+                "desc": "Upload a protein fasta file with the sequence(s) for prediction",
+                "wstype": "feature_protein_fasta",
+                "type": "wstype"
+            },
+            {
+                "id": "query_fasta_keyboard_input",
+                "allow_multiple": false,
+                "desc": "Pasted protein sequence",
+                "required": 0,
+                "default": "",
+                "label": "User copy/pasted protein sequence",
+                "type": "string"
+            },
+                        {
+                "id": "target_feature_group",
+                "allow_multiple": true,
+                "required": 0,
+                "default": null,
+                "label": "Feature groups",
+                "desc": "Protein sequence(s) selected from BV-BRC for input to the protein-protein interaction predictor",
+                "wstype": "feature_group",
+                "type": "wstype"
+            },
+            {
+                "id": "target_fasta_file",
+                "required": 0,
+                "label": "A fasta file of protein sequences the user can upload from their computer for prediction",
+                "desc": "Upload a protein fasta file with the sequence(s) for prediction",
+                "wstype": "feature_protein_fasta",
+                "type": "wstype"
+            },
+            {
+                "id": "target_fasta_keyboard_input",
+                "allow_multiple": false,
+                "desc": "Pasted protein sequence",
+                "required": 0,
+                "default": "",
+                "label": "User copy/pasted protein sequence",
+                "type": "string"
+            },
+            {
+                "id": "threshold",
+                "label": "Score threshold for considering a residue to be binding. The default is tied to which model is chosen, but users can override.",
+                "required": 0,
+                "default": 0.5,
+                "desc": "User defined threshold for a protein interaction to be considered valid.",
+                "type": "float"
+            },
+            {
+                "id": "seq_type",
+                "label": "Specify whether to do bipartite (2) vs tripartite (3) interaction; this should currently be locked to 2",
+                "required": 0,
+                "default": 2,
+                "desc": "Bipartite vs tripartite protein interaction",
+                "type": "int"
+            },
+            {
+                "id": "model_path",
+                "label": "Path to backend directory with the models. Pairs with pt_model which selects the models; users should not have input here.",
+                "required": 0,
+                "default": null,
+                "desc": "",
+                "type": "folder"
+            },
+            {
+                "id":"pt_model",
+                "default": "facebook/esm2_t6_8M_UR50D",
+                "label": "",
+                "required" : 0,
+                "enum": [
+                    "facebook/esm2_t6_8M_UR50D",
+                    ],
+                "desc": "Name of the model the service invokes. This works with model_path.",
+            },
+            {
+                "id": "t_seed",
+                "label": "This is the random seed for the transformers. Users should not have input.",
+                "required": 0,
+                "default": 212121,
+                "desc": "The random seed for transformers. This is set by python portion of the code.",
+                "type": "int"
+            },
+            {
+                "id": "output_path",
+                "label": "Output Folder",
+                "required": 1,
+                "default": null,
+                "desc": "Path to which the output will be written. Defaults to the directory containing the input data.",
+                "type": "folder"
+            },
+            {
+                "id":"output_file",
+                "label":"File Basename",
+                "required": 1,
+                "default":null,
+                "desc":"Basename for the generated output files. Defaults to the basename of the input data.",
+                "type":"wsid"
+            },
+        {
+            "id": "enable_debug",
+            "label": "Enable debug?",
+            "required": 0,
+            "default": null,
+            "desc": "If you wish debug statements to be printed for this job, enable this option.",
+            "type": "bool"
+        },
+        {
+            "id": "_tmpdir",
+            "required": 0,
+            "default": null
+        }
+    ]
+}
