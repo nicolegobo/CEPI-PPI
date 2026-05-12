@@ -1,0 +1,7 @@
+{
+    "query_feature_group": "/nbowers@bvbrc/home/Feature Groups/e_coli_pids",
+    "target_feature_group": "/nbowers@bvbrc/home/Feature Groups/e_coli_refseq",
+    "threshold": 0.5,
+    "output_path": "/nbowers@bvbrc/Nicole_dev/2026_May/PPI_with_Carla",
+    "output_file": "feature_group_feature_group"
+}
