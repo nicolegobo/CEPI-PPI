@@ -487,7 +487,7 @@ def main(config):
     query_file = config["query"]
     target_file = config["target"]
     seq_type = config["params"]["seq_type"]
-    model_path = config["params"]["model_path"]
+    model_path = config["model_path"]
     t_seed = config["params"]["t_seed"]
     pt_model = config["params"]["pt_model"]
     t = config["params"]["threshold"]

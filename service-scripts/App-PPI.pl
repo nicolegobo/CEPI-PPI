@@ -186,6 +186,9 @@ sub run_app
     $config_vars{params} = $params; 
     # join model_path and pt_model, reformat depending on how you set up the backend directory
     # $config_vars{model_path_future} = application_backend_dir . "CEPI-PPI/models/" . $config_vars{pt_model};
+    #$config_vars{model_path} = application_backend_dir . "/CEPI-PPI/models/" . $config_vars{pt_model};
+    $config_vars{model_path} = application_backend_dir . "/CEPI-PPI/models/" . "checkpoint-3798";
+    $config_vars{threshold} = $params->{threshold};
     $config_vars{input_data_dir} = $staging_dir;
     $config_vars{output_data_dir} = $output_dir;
     $config_vars{work_data_dir} = $work_dir;
